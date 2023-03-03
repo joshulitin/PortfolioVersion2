@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap" rel="stylesheet">
+    <!-- Logo -->
+    <script src="https://kit.fontawesome.com/5941c7a8c2.js" crossorigin="anonymous"></script>
+
+    <!-- EmailJS -->
+    <script type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+      (function(){
+      emailjs.init("v0CbHXu7YUwZbnYgG");
+      })();
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Joshua Ulitin</title>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="index.html" class="nav__logo">joshulitin</a>
+        
+          <ul class="nav__links">
+            <li><a class="nav__link" href="#section--1" >PROJECTS</a></li>
+            <li><a class="nav__link" href="#section--2">SKILLS</a></li>
+            <li><a class="nav__link" href="#contact">CONTACT</a></li>
+       
+          </ul>     
+          <a href="#resume" class="nav__resume nav__link--btn btn--show-modal">Resume</a>
+        </nav>
+    </header>
+    <main>
+      <section class="title__banner">
+        <div class="title__container">
+        <h2>WEB DEVELOPER</h2>
+        <h1>
+          Creating responsive and interactive web applications. </h1>
+          
+        </div>
+        
+      </section>
+
+      <section class="section" id="section--1">
+        <div class="projects__title">
+          <h2 class="projects__description">PROJECTS</h2>
+        </div>
+        <!-- Project 1 -->
+        <div class="projects__container">
+          <img
+          src="images/forkify.JPG"
+          data-src="img/digital.jpg"
+          alt="Computer"
+          class="projects__img"
+          />
+          <div class="projects__info">
+            <div class="projects__banner">
+            <h5 class="projects__header">Forkify</h5>
+            <h1>Javascript, HTML, CSS, SCSS</h1>
+            </div>
+              <p>
+                A vanilla JavaScript application that interacts with the food2fork API to fetch and display recipe food data.<br><br>
+                Search recipes, control servings, bookmark recipes, add your own recipes. <br><br>
+                Made during an online Udemy course
+              </p>
+              <a href="https://forkify-ulitin.netlify.app" class="projects__link" target="_blank">LIVE</a>
+              <a href="https://github.com/joshulitin/forkify" target="_blank" class="projects__link">GITHUB</a>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="projects__container">
+          <div class="projects__info">
+            <div class="projects__banner">
+            <h5 class="projects__header">Mapty</h5>
+            <h1>Javascript, HTML, CSS</h1>
+            </div>
+                <p>
+                  Mapty is a workout tracking app on a map.<br><br> Users can add their workout locations, whether they were running or cycling, and add additional information about their workout.<br><br> Utilizes the leafleft library and Geolocation API <br><br>
+                  Made during an online Udemy course
+                </p>
+                <a href="https://mapty-ulitin.netlify.app" target="_blank" class="projects__link">LIVE</a>
+                <a href="https://github.com/joshulitin/Mapty" target="_blank" class="projects__link">GITHUB</a>
+          </div>
+          <img
+          src="images/Mapty.JPG"
+          data-src="img/digital.jpg"
+          alt="Computer"
+          class="projects__img"
+          />
+        </div>
+        <!-- Project 3 -->
+        <div class="projects__container">
+        
+          <img
+          src="images/forkify.JPG"
+          data-src="img/digital.jpg"
+          alt="Computer"
+          class="projects__img"
+          />
+          <div class="projects__info">
+            <div class="projects__banner">
+            <h5 class="projects__header">Forkify</h5>
+            <h1>Javascript, HTML, CSS</h1>
+            </div>
+              <p>
+                A vanilla JavaScript application that interacts with the food2fork API to fetch and display recipe food data.<br><br>
+                Search recipes, control servings, bookmark recipes, add your own recipes. <br><br>
+                Made during an online Udemy course
+              </p>
+              <a href="#resume" target="_blank" class="projects__link">LIVE</a>
+              <a href="#resume" target="_blank" class="projects__link">GITHUB</a>
+          </div>
+        </div>
+        <!-- Project 4 -->
+        <div class="projects__container">
+          <div class="projects__info">
+            <div class="projects__banner">
+            <h5 class="projects__header">Mapty</h5>
+            <h1>Javascript, HTML, CSS</h1>
+            </div>
+                <p>
+                  Mapty is a workout tracking app on a map.<br><br> Users can add their workout locations, whether they were running or cycling, and add additional information about their workout.<br><br>
+                  Made during an online Udemy course
+                </p>
+                <a href="#resume" target="_blank" class="projects__link">LIVE</a>
+                <a href="#resume" target="_blank" class="projects__link">GITHUB</a>
+          </div>
+          <img
+          src="images/Mapty.JPG"
+          data-src="img/digital.jpg"
+          alt="Computer"
+          class="projects__img"
+          />
+        </div>
+      </section>
+
+      <section class="section" id="section--2">
+        <div class="projects__title">
+          <h2 class="projects__description">SKILLS</h2>
+        </div>
+        
+        <div class="skills">
+          <!--SKILLS BUTTON  -->
+          <div class="skills__btn--container">
+            <button class="btn btn__1 btn__content btn__active" data-tab="1">LANGUAGES</button>
+            <button class="btn btn__2 btn__content" data-tab="2">TOOLS</button>
+          </div>
+          <!-- FIRST CLASS -->
+          <div class="skills__content skills__content--1 skills__active">
+            <div>
+              <i class="fa-brands fa-js fa-2x"></i>
+              <i class="fa-brands fa-html5 fa-2x"></i>
+              <i class="fa-brands fa-css3-alt fa-2x"></i>
+            </div>
+            <div class=" logo__border">
+              <p>This portfolio website was developed using my web development skills!</p>
+            </div>
+            <div class="logo__align">
+              <i class="fa-brands fa-python fa-2x"></i>
+            </div>
+            <div class="logo__border">
+              <p>K-commerce was developed using Python and uses Django as it's framework for the database.</p>
+            </div>
+            <div class="logo__align">
+            <img
+                  src="images/c-logo.png" class="clogo">
+            </div>
+            <div>
+              <p>The Horizon was developed using unity which uses the C# language.</p>
+            </div>
+          </div>
+          <!-- SECOND CLASS -->
+          <div class="skills__content skills__content--2 ">    
+            <div>
+              <i class="fa-brands fa-youtube fa-2x"></i>
+              <i class="fa-brands fa-facebook fa-2x"></i>
+              <i class="fa-brands fa-insta fa-2x"></i>
+            </div>
+            <div class=" logo__border">
+              <p>AAA</p>
+            </div>
+            <div class="logo__align">
+              <i class="fa-brands fa-python fa-2x"></i>
+            </div>
+            <div class="logo__border">
+              <p>This portfolio website was developed using my web development skills!</p>
+            </div>
+            <div class="logo__align">
+              <img
+                  src="images/c-logo.png" class="clogo">
+            </div>
+            <div>
+              <p>AJEFKLJAELKFJAEKLFJAEKLFJOOIQWPIRPQIWTPQWKF</p>
+            </div>
+          </div>
+        </div>
+        
+      </section>
+      <!-- CONTACT SECTION -->
+      <section class="section contact__section" id="contact">
+        <div class="">
+          <h1 class="contact__description">
+            SEND A MESSAGE
+          </h1>
+        </div>
+          <div class="modal__form">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            <label for="email">E-mail</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your E-mail">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="10" column="30" class="form-control" placeholder="Your message"></textarea>
+            <button class="btn btn__send">Submit</button>
+          </div>
+
+          <!-- FOOTER -->
+          <footer class="wrapper">
+            <div class="icon github">
+              <span><a href="https://github.com/joshulitin?tab=repositories" target="_blank"><i class="fab fa-github"></i></a></span>
+            </div>
+            <div class="icon linkedin">
+              <span><a href="https://www.linkedin.com/in/joshua-ulitin-158299199/" target="_blank"><i class="fab fa-linkedin"></a></i></span>
+            </div>
+          </footer>
+        </section>
+    </main>
+    </section>
+    <div class="modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        <embed src="JoshuaUlitinLatest.pdf" width="700px" height="700px">
+      </h2>
+    </div>
+    <div class="overlay hidden"></div>
+  </body>
+</html>
