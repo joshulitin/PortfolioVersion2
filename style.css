@@ -5,6 +5,9 @@
   text-decoration: none;
 }
 
+html {
+  scroll-padding-top: var(--scroll-pading, 90px);
+}
 body {
   font-family: 'Inter', sans-serif;
   background-color: #ffffff;
