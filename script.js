@@ -129,3 +129,4 @@ const imgObserver = new IntersectionObserver(loadImg, {
   threshold: 0,
 });
 imgTargets.forEach(img => imgObserver.observe(img));
+console.log('Testing');
