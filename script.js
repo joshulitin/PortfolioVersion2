@@ -91,6 +91,21 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 });
 headerObserver.observe(header);
 
+// Navigation links fade animation
+const handleHover = function (e, opacity) {
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+
+    siblings.forEach(el => {
+      if (el !== link) el.style.opacity = this;
+    });
+  }
+};
+
+nav.addEventListener('mouseover', handleHover.bind(0.5));
+
+nav.addEventListener('mouseout', handleHover.bind(1));
 // Skill section, switching classes
 buttonContainer.addEventListener('click', function (e) {
   const clicked = e.target.closest('.btn__content');
@@ -104,6 +119,23 @@ buttonContainer.addEventListener('click', function (e) {
   document
     .querySelector(`.skills__content--${clicked.dataset.tab}`)
     .classList.add('skills__active');
+});
+
+//Reveal sections
+const allSections = document.querySelectorAll('.section');
+
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  entry.target.classList.remove('section--hidden');
+};
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
+});
+allSections.forEach(function (section) {
+  sectionObserver.observe(section);
+  section.classList.add('section--hidden');
 });
 
 // Lazy loading images
