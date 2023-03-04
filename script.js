@@ -43,28 +43,34 @@ btnSend.addEventListener('click', function () {
     email: document.getElementById('email').value,
     message: document.getElementById('message').value,
   };
+  if (
+    document.getElementById('name').value == '' ||
+    document.getElementById('email').value == '' ||
+    document.getElementById('message').value == ''
+  ) {
+    alert('All fields requires values');
+  } else {
+    emailjs
+      .send(serviceID, templateID, params)
+      .then(res => {
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('message').value = '';
 
-  emailjs
-    .send(serviceID, templateID, params)
-    .then(res => {
-      document.getElementById('name').value = '';
-      document.getElementById('email').value = '';
-      document.getElementById('message').value = '';
-      console.log(res);
-      alert('Your message has been sent.');
-    })
-    .catch(err => console.error(err));
+        alert('Your message has been sent.');
+      })
+      .catch(err => console.error(err));
+  }
 });
 
 // Smooth scrolling
 document.querySelector('.nav__links').addEventListener('click', function (e) {
-  //console.log(e.target);
   e.preventDefault();
 
   // Matching strategy
   if (e.target.classList.contains('nav__link')) {
     const id = e.target.getAttribute('href');
-    console.log(id);
+
     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
   }
 });
@@ -73,7 +79,7 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 const navHeight = nav.getBoundingClientRect().height;
 const stickyNav = function (entries) {
   const [entry] = entries;
-  console.log(entry);
+
   if (!entry.isIntersecting) nav.classList.add('sticky');
   else nav.classList.remove('sticky');
 };
@@ -99,3 +105,27 @@ buttonContainer.addEventListener('click', function (e) {
     .querySelector(`.skills__content--${clicked.dataset.tab}`)
     .classList.add('skills__active');
 });
+
+// Lazy loading images
+const imgTargets = document.querySelectorAll('img[data-src]');
+console.log(imgTargets);
+
+const loadImg = function (entries, observer) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+
+  // Replace lazy image with the original
+  entry.target.src = entry.target.dataset.src;
+
+  entry.target.addEventListener('load', function () {
+    entry.target.classList.remove('lazy-img');
+  });
+
+  observer.unobserve(entry.target);
+};
+
+const imgObserver = new IntersectionObserver(loadImg, {
+  root: null,
+  threshold: 0,
+});
+imgTargets.forEach(img => imgObserver.observe(img));
