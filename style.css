@@ -40,6 +40,7 @@ header {
   position: fixed;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.95);
+  z-index: 2;
 }
 
 .nav__logo {
@@ -108,6 +109,15 @@ nav ul li a {
     border: 1px solid #111;
     float: right;
     padding: 0 20px;
+  }
+
+  .btn__main:hover,
+  .projects__link:hover {
+    background-color: #dfdfdf;
+  }
+
+  .nav__link:hover {
+    font-weight: 900;
   }
 }
 
@@ -280,14 +290,15 @@ section {
     font-weight: 600;
     display: inline-block;
     transform: translateY(-50%);
+    z-index: 1;
   }
   .btn__active {
     transform: translateY(-65%);
+    z-index: 1;
   }
 
   .btn__1 {
     background-color: #000000;
-
     color: #fff;
   }
   .btn__2 {
@@ -312,8 +323,8 @@ section {
   }
 
   .clogo {
-    width: 1.8em;
-    height: 1.8em;
+    width: 2em;
+    height: 2em;
   }
 
   .logo__border {
