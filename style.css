@@ -9,9 +9,6 @@
   text-decoration: none;
 }
 
-html {
-  scroll-padding-top: var(--scroll-padding, 90px);
-}
 body {
   font-family: 'Inter', sans-serif;
   background-color: #ffffff;
@@ -50,8 +47,8 @@ header {
 }
 
 nav ul {
-  margin: 20px 0px 0px 10px;
-  width: fit-content;
+  display: flex;
+  justify-content: space-around;
 }
 
 nav ul li {
@@ -68,6 +65,17 @@ nav ul li a {
 
 .btn__main {
   display: none;
+}
+.btn__main2 {
+  margin: 1rem 4rem 0 4rem;
+  font-size: 25px;
+  color: #000000;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 60px;
+  border: 1px solid #000000;
+  display: flex;
+  justify-content: space-around;
 }
 /* Title page */
 .title__banner {
@@ -186,9 +194,14 @@ section {
 
 .btn__content {
   font-weight: 600;
+  width: 100%;
   display: inline-block;
   transform: translateY(-50%);
   z-index: 1;
+}
+
+.btn__content:hover {
+  font-weight: 900;
 }
 .btn__active {
   transform: translateY(-65%);
@@ -268,7 +281,7 @@ section {
   text-align: center;
 }
 
-.modal__form {
+.form__container {
   display: grid;
   margin: auto;
   align-items: center;
@@ -276,7 +289,7 @@ section {
   width: 100%;
 }
 
-.modal__form label {
+.form__container label {
   margin-left: 5px;
   font-size: 1.2rem;
   font-weight: 900;
@@ -285,7 +298,7 @@ section {
   text-shadow: 2px 2px 8px #2e2e2e;
 }
 
-.modal__form input {
+.form__container input {
   padding-right: 1rem;
   width: 100%;
   font-size: 1.5rem;
@@ -293,14 +306,14 @@ section {
   border: 1px solid #ddd;
   border-radius: 0.5rem;
 }
-.modal__form textarea {
+.form__container textarea {
   font-size: 1.5rem;
   padding: 1rem 1.5rem;
   border: 1px solid #ddd;
   border-radius: 0.5rem;
 }
 
-.modal__form button {
+.form__container button {
   grid-column: 1 / span 2;
   justify-self: center;
   margin-top: 1rem;
@@ -342,11 +355,14 @@ section {
 
 /* CONTACT SECTION END */
 
-.hidden {
+/* MOBILE MODAL SECTION */
+.modal__header,
+.btn--close-modal {
   display: none;
 }
 
-.modal__header {
+/* MODAL END */
+.hidden {
   display: none;
 }
 
@@ -355,6 +371,19 @@ section {
 }
 /* DESKTOP */
 @media only screen and (min-width: 1030px) {
+  nav ul {
+    margin: 20px 0px 0px 10px;
+    width: fit-content;
+  }
+
+  nav ul li {
+    float: left;
+    list-style: none;
+    padding: 0 16px;
+  }
+  html {
+    scroll-padding-top: var(--scroll-padding, 90px);
+  }
   .nav.sticky {
     position: fixed;
     width: 100%;
@@ -394,6 +423,10 @@ section {
     border: 1px solid #111;
     float: right;
     padding: 0 20px;
+  }
+
+  .btn__main2 {
+    display: none;
   }
 
   .btn__main:hover,
@@ -560,7 +593,7 @@ section {
     text-align: center;
   }
 
-  .modal__form {
+  .form__container {
     display: grid;
     margin: auto;
     grid-template-columns: 1fr 2fr;
@@ -569,7 +602,7 @@ section {
     max-width: 500px;
   }
 
-  .modal__form label {
+  .form__container label {
     font-size: 1.7rem;
     font-weight: 900;
     vertical-align: top;
@@ -578,20 +611,20 @@ section {
     text-shadow: 2px 2px 8px #2e2e2e;
   }
 
-  .modal__form input {
+  .form__container input {
     font-size: 1.5rem;
     padding: 1rem 1.5rem;
     border: 1px solid #ddd;
     border-radius: 0.5rem;
   }
-  .modal__form textarea {
+  .form__container textarea {
     font-size: 1.5rem;
     padding: 1rem 1.5rem;
     border: 1px solid #ddd;
     border-radius: 0.5rem;
   }
 
-  .modal__form button {
+  .form__container button {
     grid-column: 1 / span 2;
     justify-self: center;
     margin-top: 1rem;
@@ -624,12 +657,6 @@ section {
     transition: all 0.5s;
   }
 
-  .modal__form button {
-    grid-column: 1 / span 2;
-    justify-self: center;
-    margin-top: 1rem;
-  }
-
   .btn--close-modal {
     font-family: inherit;
     color: inherit;
@@ -642,11 +669,12 @@ section {
     background: none;
   }
 
-  .lazy-img {
-    filter: blur(20px);
+  .modal__header,
+  .btn--close-modal {
+    display: block;
   }
 
-  .modal__header {
-    display: block;
+  .lazy-img {
+    filter: blur(20px);
   }
 }
